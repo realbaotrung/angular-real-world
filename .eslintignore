@@ -1,0 +1,10 @@
+src/**/*/tsconfig.*.json
+tsconfig.*.json
+node_modules/
+*.config.js
+src/index.html
+src/polyfills.ts
+src/main.ts
+src/assets/*
+src/environments/*
+.*.js

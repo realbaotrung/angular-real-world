@@ -9,15 +9,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier'
   ],
-  ignorePatterns: [
-    'src/index.html',
-    'src/polyfills.ts',
-    'src/main.ts',
-    'src/assets/*',
-    'src/environments/*',
-    'lint-staged.config.js',
-    '.*.js'
-  ],
   overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -74,7 +65,7 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'error',
     '@typescript-eslint/no-unused-expressions': 'error',
     '@typescript-eslint/prefer-function-type': 'error',
-    '@typescript-eslint/quotes': ['error', 'single'],
+    '@typescript-eslint/quotes': 0,
     '@typescript-eslint/unified-signatures': 'error',
     'arrow-body-style': 'error',
     'constructor-super': 'error',
