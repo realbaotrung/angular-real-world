@@ -3,10 +3,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "baseUrl": "./",
-    "types": ["node"]
+    "types": ["node"],
   },
   "files": ["src/main.ts", "src/polyfills.ts"],
+  "exclude": ["node_modules", "**/node_modules/*"],
   "include": ["src/**/*.d.ts"],
-  "exclude": ["node_modules", "**/node_modules/*"]
 }

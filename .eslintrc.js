@@ -51,7 +51,7 @@ module.exports = {
         accessibility: 'explicit'
       }
     ],
-    '@typescript-eslint/member-ordering': 'error',
+    '@typescript-eslint/member-ordering': 0,
     '@typescript-eslint/naming-convention': 'error',
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-empty-interface': 'error',
