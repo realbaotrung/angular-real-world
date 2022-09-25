@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ReplaySubject, BehaviorSubject } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { User } from '../models/user.model';
@@ -12,9 +11,9 @@ import { JwtService } from './jwt.service';
 })
 export class UserService {
   /**
-   * It stores the latest value emitted to its consumers, and whenever a
-   * new Observer subscribes, it will immediately
-   * receive the "current value" from the BehaviorSubject.
+   * It needs an initial value and stores the latest value emitted to
+   * its consumers, and whenever a new Observer subscribes, it will
+   * immediately receive the "current value" from the BehaviorSubject.
    */
   private currentUserSubject = new BehaviorSubject<User>({} as User);
   public currentUser = this.currentUserSubject
@@ -29,11 +28,7 @@ export class UserService {
   private isAuthenticatedSubject = new ReplaySubject<boolean>(1);
   public isAuthenticated = this.isAuthenticatedSubject.asObservable();
 
-  constructor(
-    private apiService: ApiService,
-    private http: HttpClient,
-    private jwtService: JwtService
-  ) {}
+  constructor(private apiService: ApiService, private jwtService: JwtService) {}
 
   /**
    * Verify JWT in localStorage with server and load user's info
@@ -75,7 +70,7 @@ export class UserService {
     this.isAuthenticatedSubject.next(false);
   }
 
-  attemptAuth(type, credentials): Observable<User> {
+  attemptAuth(type: string, credentials: any): Observable<User> {
     const route = type === 'login' ? '/login' : '';
     return this.apiService.post('/user' + route, { user: credentials }).pipe(
       map(
@@ -96,7 +91,7 @@ export class UserService {
    * Update the user on server (email, pass, etc...)
    * @param user
    */
-  update(user): Observable<User> {
+  update(user: User): Observable<User> {
     return this.apiService.put('/user', { user }).pipe(
       map((data) => {
         // Update the currentUser observable
@@ -109,5 +104,6 @@ export class UserService {
 
 /*
 eslint
-  @typescript-eslint/no-unused-vars:0
+  @typescript-eslint/no-unused-vars:0,
+  @typescript-eslint/no-explicit-any:0
 */

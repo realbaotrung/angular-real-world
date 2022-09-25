@@ -8,11 +8,6 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
-  private formatError(error: any): Observable<never> {
-    // just emit error and nothing else
-    return throwError(error.error);
-  }
-
   constructor(private http: HttpClient) {}
 
   get(path: string, params: HttpParams = new HttpParams()): Observable<any> {
@@ -21,22 +16,27 @@ export class ApiService {
       .pipe(catchError(this.formatError));
   }
 
-  put(path: string, body: any): Observable<any> {
+  put(path: string, body?: Record<string, unknown>): Observable<any> {
     return this.http
       .put(`${environment.api_url}${path}`, JSON.stringify(body))
       .pipe(catchError(this.formatError));
   }
 
-  post(path: string, body: any): Observable<any> {
+  post(path: string, body?: Record<string, unknown>): Observable<any> {
     return this.http
       .put(`${environment.api_url}${path}`, JSON.stringify(body))
       .pipe(catchError(this.formatError));
   }
 
-  delete(path): Observable<any> {
+  delete(path: string): Observable<any> {
     return this.http
       .delete(`${environment.api_url}${path}`)
       .pipe(catchError(this.formatError));
+  }
+
+  private formatError(error: any): Observable<never> {
+    // just emit error and nothing else
+    return throwError(error.error);
   }
 }
 

@@ -1,13 +1,21 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'arw-layout-footer',
-  template: ` <p>footer works!</p> `,
+  template: `
+    <footer>
+      <div class="container">
+        <a class="logo-font" routerLink="/">conduit</a>
+        <span class="attribution">
+          &copy; {{ today | date: 'yyyy' }} An interactive learning project from
+          <a href="https://thinkster.io">Thinkster</a>. Code licensed under MIT
+        </span>
+      </div>
+    </footer>
+  `,
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FooterComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class FooterComponent {
+  today: number = Date.now();
 }

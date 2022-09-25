@@ -1,4 +1,3 @@
-import { UserService } from './../../core/services';
 import {
   Directive,
   Input,
@@ -6,14 +5,15 @@ import {
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
+import { UserService } from './../../core/services';
 
 @Directive({ selector: '[arwShowAuthed]' })
 export class ShowAuthedDirective implements OnInit {
-  condition: boolean;
-
   @Input() set arwShowAuthed(condition: boolean) {
     this.condition = condition;
   }
+
+  condition?: boolean;
 
   constructor(
     private templateRef: TemplateRef<any>,

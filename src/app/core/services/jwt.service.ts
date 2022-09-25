@@ -21,6 +21,10 @@ export class JwtService {
     window.localStorage.removeItem(this.key);
   }
 
+  // ==========================================================================
+  // For security
+  // ==========================================================================
+
   private encrypt(text: string): string {
     return CryptoJS.AES.encrypt(text, environment.storageKey).toString();
   }

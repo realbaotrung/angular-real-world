@@ -1,13 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { User } from '../../core/models/user.model';
-import { UserService } from '../../core/services';
+import { User, UserService } from '../../core';
 
 @Component({
   selector: 'arw-layout-header',
   template: `
     <nav class="navbar navbar-light">
       <div class="container">
-        <a class="navbar-brand" routerLink="/">conduit></a>
+        <a class="navbar-brand" routerLink="/">conduit</a>
 
         <!-- show this logged out for users -->
         <ul *arwShowAuthed="false" class="nav navbar-nav pull-xs-right">
@@ -85,7 +84,7 @@ import { UserService } from '../../core/services';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {
-  currentUser: User;
+  currentUser!: User;
 
   constructor(private userService: UserService) {}
 

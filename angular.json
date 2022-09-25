@@ -12,11 +12,10 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "changeDetection": "OnPush",
-          "style": "css",
           "inlineTemplate": true,
           "inlineStyle": true,
-          "skipTests": true
+          "skipTests": true,
+          "style": "css"
         },
         "@schematics/angular:class": {
           "skipTests": true
@@ -63,7 +62,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "crypto-js"
+            ]
           },
           "configurations": {
             "production": {
