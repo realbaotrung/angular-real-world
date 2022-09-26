@@ -11,7 +11,7 @@ import { take } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeAuthResolverService implements Resolve<boolean> {
+export class HomeAuthResolver implements Resolve<boolean> {
   constructor(private userService: UserService) {}
 
   resolve(

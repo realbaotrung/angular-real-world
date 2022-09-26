@@ -75,7 +75,7 @@ export class ArticleListComponent {
       this.results = data.articles;
 
       this.totalPages = Array.from(
-        new Array(Math.ceil(data.articlesCount / (this.limit as number))),
+        new Array(Math.ceil(data.articlesCount / this.limit)),
         (_, index) => index + 1
       );
     });
