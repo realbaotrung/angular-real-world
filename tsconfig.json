@@ -17,6 +17,7 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "allowJs": true,
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
     "importHelpers": true,
