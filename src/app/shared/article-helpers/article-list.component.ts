@@ -13,7 +13,7 @@ import { Article, ArticleListConfig, ArticlesService } from '../../core';
       Loading articles...
     </div>
 
-    <div class="app-artilce-preview" [hidden]="loading || results.length">
+    <div class="app-article-preview" [hidden]="loading || results.length">
       No articles are here... yet.
     </div>
 

@@ -1,7 +1,14 @@
 import { ArticlesService } from './services/articles.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ApiService, UserService, JwtService, TagsService } from './services';
+import {
+  ApiService,
+  UserService,
+  JwtService,
+  TagsService,
+  CommentsService,
+  ProfilesService
+} from './services';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpTokensInterceptor } from './interceptors/http-tokens.interceptor';
 
@@ -17,7 +24,9 @@ import { HttpTokensInterceptor } from './interceptors/http-tokens.interceptor';
     JwtService,
     UserService,
     TagsService,
-    ArticlesService
+    ArticlesService,
+    CommentsService,
+    ProfilesService
   ],
   declarations: []
 })

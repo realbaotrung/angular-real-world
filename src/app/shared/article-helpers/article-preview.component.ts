@@ -6,14 +6,13 @@ import { Component, Input } from '@angular/core';
   template: `
     <div class="article-preview">
       <arw-article-meta [article]="article">
-        <!-- TODO: favorite button
-          <arw-favorite-button
+        <arw-favorite-button
           [article]="article"
           (toggle)="onToggleFavorite($event)"
           class="pull-xs-right"
         >
-          {{article.favoritesCount}}
-        </arw-favorite-button> -->
+          {{ article.favoritesCount }}
+        </arw-favorite-button>
       </arw-article-meta>
 
       <a [routerLink]="['/article', article.slug]" class="preview-link">

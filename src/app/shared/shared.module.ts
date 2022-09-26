@@ -9,7 +9,7 @@ import {
   ArticlePreviewComponent,
   ArticleMetaComponent
 } from './article-helpers';
-import { FavoriteButtonComponent } from './buttons';
+import { FavoriteButtonComponent, FollowButtonComponent } from './buttons';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
@@ -18,7 +18,8 @@ import { FavoriteButtonComponent } from './buttons';
     ArticleListComponent,
     ArticlePreviewComponent,
     ArticleMetaComponent,
-    FavoriteButtonComponent
+    FavoriteButtonComponent,
+    FollowButtonComponent
   ],
   exports: [
     CommonModule,
@@ -27,7 +28,10 @@ import { FavoriteButtonComponent } from './buttons';
     FormsModule,
     ReactiveFormsModule,
     ShowAuthedDirective,
-    ArticleListComponent
+    ArticleMetaComponent,
+    ArticleListComponent,
+    FavoriteButtonComponent,
+    FollowButtonComponent
   ]
 })
 export class SharedModule {}
