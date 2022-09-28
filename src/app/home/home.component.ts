@@ -1,6 +1,6 @@
 import { ArticleListConfig, TagsService, UserService } from './../core';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'arw-home',
@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
       <div class="container page">
         <div class="row">
           <div class="col-md-9">
-            <div class="feed-toogle">
+            <div class="feed-toggle">
               <ul class="nav nav-pills outline-active">
                 <li class="nav-item">
                   <a
@@ -100,15 +100,16 @@ export class HomeComponent implements OnInit {
   constructor(
     private router: Router,
     private tagsService: TagsService,
-    private userService: UserService
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.userService.isAuthenticated.subscribe((authenticated) => {
-      this.isAuthenticated = authenticated;
+    // see: https://angular.io/api/router/Resolve
+    this.activatedRoute.data.subscribe((data) => {
+      this.isAuthenticated = data['isAuthenticated'];
 
       // set the article list accordingly
-      if (authenticated) {
+      if (data['isAuthenticated']) {
         this.setListTo('feed');
       } else {
         this.setListTo('all');
@@ -132,7 +133,7 @@ export class HomeComponent implements OnInit {
     this.listConfig = { type: type, filters: filters };
   }
 
-  trackByTagName(index: number, tag: string): string {
+  trackByTagName(_: number, tag: string): string {
     return tag;
   }
 }

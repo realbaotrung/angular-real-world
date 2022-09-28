@@ -8,7 +8,7 @@ import { Profile, ProfilesService, UserService } from '../../core';
   styles: []
 })
 export class FollowButtonComponent {
-  @Input() profile: Profile;
+  @Input() profile!: Profile;
   @Output() toggle = new EventEmitter<boolean>();
   isSubmitting = false;
 

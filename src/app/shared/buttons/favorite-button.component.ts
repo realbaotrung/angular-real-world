@@ -49,21 +49,21 @@ export class FavoriteButtonComponent {
           if (!this.article.favorited) {
             return this.articlesService.favorite(this.article.slug).pipe(
               tap(
-                (data) => {
+                (_data) => {
                   this.isSubmitting = false;
                   this.toggle.emit(true);
                 },
-                (error) => (this.isSubmitting = false)
+                (_error) => (this.isSubmitting = false)
               )
             );
           } else {
             return this.articlesService.unfavorite(this.article.slug).pipe(
               tap(
-                (data) => {
+                (_data) => {
                   this.isSubmitting = false;
                   this.toggle.emit(false);
                 },
-                (error) => {
+                (_error) => {
                   this.isSubmitting = false;
                 }
               )

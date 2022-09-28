@@ -59,7 +59,7 @@ import {
         <div class="row article-content">
           <div class="col-md-12">
             <!-- TODO: implement markdown pipe -->
-            <div [innerHTML]="article.body | markdown"></div>
+            <!-- <div [innerHTML]="article.body | markdown"></div> -->
 
             <ul class="tag-list">
               <li
@@ -115,7 +115,7 @@ import {
           <div class="col-xs-12 col-md-8 offset-md-2">
             <div *arwShowAuthed="true">
               <!-- TODO: implement arw list errors -->
-              <arw-list-errors [errors]="commentFormErrors"></arw-list-errors>
+              <!-- <arw-list-errors [errors]="commentFormErrors"></arw-list-errors> -->
 
               <form class="card comment-form" (ngSubmit)="addComment()">
                 <fieldset [disabled]="isSubmitting">
@@ -145,12 +145,12 @@ import {
             </div>
 
             <!-- TODO: implement arw article comment -->
-            <arw-article-comment
+            <!-- <arw-article-comment
               *ngFor="let comment of comments"
               [comment]="comment"
               (deleteComment)="onDeleteComment(comment)"
             >
-            </arw-article-comment>
+            </arw-article-comment> -->
           </div>
         </div>
       </div>
@@ -159,17 +159,17 @@ import {
   styles: []
 })
 export class ArticleComponent implements OnInit {
-  article: Article;
-  currentUser: User;
-  canModify: boolean;
-  comments: Comment[];
+  article!: Article;
+  currentUser!: User;
+  canModify!: boolean;
+  comments!: Comment[];
   commentControl = new FormControl();
   commentFormErrors = {};
   isSubmitting = false;
   isDeleting = false;
 
   constructor(
-    private route: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private router: Router,
     private articlesService: ArticlesService,
     private commentsService: CommentsService,
@@ -178,8 +178,8 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit(): void {
     // Retrieve the prefetched article
-    this.route.data.subscribe((data) => {
-      this.article = data.article;
+    this.activatedRoute.data.subscribe((data) => {
+      this.article = data['article'];
 
       // Load the comments on this article
       this.populateComments();
@@ -238,7 +238,7 @@ export class ArticleComponent implements OnInit {
     );
   }
 
-  onDeleteComment(comment) {
+  onDeleteComment(comment: any) {
     this.commentsService
       .destroy(comment.id, this.article.slug)
       .subscribe((success) => {
@@ -247,4 +247,8 @@ export class ArticleComponent implements OnInit {
   }
 }
 
-/* eslint @typescript-eslint/no-unused-vars:0 */
+/*
+eslint
+  @typescript-eslint/no-unused-vars:0,
+  @typescript-eslint/no-explicit-any:0
+*/

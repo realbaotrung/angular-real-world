@@ -18,7 +18,7 @@ import { Component, Input } from '@angular/core';
         </span>
       </div>
 
-      <ng-content"></ng-content>
+      <ng-content></ng-content>
     </div>
   `,
   styles: []

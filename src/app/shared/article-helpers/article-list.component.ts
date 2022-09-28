@@ -5,7 +5,7 @@ import { Article, ArticleListConfig, ArticlesService } from '../../core';
   selector: 'arw-article-list',
   template: `
     <arw-article-preview
-      *ngFor="let article of results"
+      *ngFor="let article of results; trackBy: trackByArticleSlug"
       [article]="article"
     ></arw-article-preview>
 
@@ -54,6 +54,10 @@ export class ArticleListComponent {
   totalPages: number[] = [1];
 
   constructor(private articlesService: ArticlesService) {}
+
+  trackByArticleSlug(_: number, article: Article) {
+    return article.slug;
+  }
 
   setPageTo(pageNumber: number) {
     this.currentPage = pageNumber;
