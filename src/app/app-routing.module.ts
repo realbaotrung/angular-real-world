@@ -6,10 +6,11 @@ const routes: Routes = [
   //   path: 'settings',
   //   loadChildren: () => import('./setting/settings.module').then(m => m.SettingsModule)
   // },
-  // {
-  //   path: 'profile',
-  //   loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
-  // },
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./profile/profile.module').then((m) => m.ProfileModule)
+  },
   // {
   //   path: 'editor',
   //   loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule)

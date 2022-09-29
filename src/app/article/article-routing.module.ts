@@ -1,14 +1,14 @@
-import { HomeComponent } from './home.component';
+import { ArticleComponent } from './article.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeAuthResolver } from './home-auth.resolver';
+import { ArticleResolver } from './article.resolver';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
+    path: ':slug',
+    component: ArticleComponent,
     resolve: {
-      isAuthenticated: HomeAuthResolver
+      article: ArticleResolver
     }
   }
 ];
@@ -17,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomeRoutingModule {}
+export class ArticleRoutingModule {}

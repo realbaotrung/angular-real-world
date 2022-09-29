@@ -10,16 +10,16 @@ import { Injectable } from '@angular/core';
 export class CommentsService {
   constructor(private apiService: ApiService) {}
 
-  add(slug: string, payload: any): Observable<Comment> {
+  add(slug: string, body: string): Observable<Comment> {
     return this.apiService
-      .post(`/articles'/${slug}/comments`, { comment: { body: payload } })
-      .pipe(map((data) => data.comment));
+      .post(`/articles'/${slug}/comments`, { comment: { body } })
+      .pipe(map((data) => data.comment as Comment));
   }
 
   getAll(slug: string): Observable<Comment[]> {
     return this.apiService
       .get(`/articles/${slug}/comments`)
-      .pipe(map((data) => data.comments));
+      .pipe(map((data) => data.comments as Comment[]));
   }
 
   destroy(commentId: string, articleSlug: string) {

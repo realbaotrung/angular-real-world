@@ -10,6 +10,7 @@ import {
   ArticleMetaComponent
 } from './article-helpers';
 import { FavoriteButtonComponent, FollowButtonComponent } from './buttons';
+import { ListErrorsComponent } from './list-errors/list-errors.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
@@ -19,7 +20,8 @@ import { FavoriteButtonComponent, FollowButtonComponent } from './buttons';
     ArticlePreviewComponent,
     ArticleMetaComponent,
     FavoriteButtonComponent,
-    FollowButtonComponent
+    FollowButtonComponent,
+    ListErrorsComponent
   ],
   exports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { FavoriteButtonComponent, FollowButtonComponent } from './buttons';
     ArticleMetaComponent,
     ArticleListComponent,
     FavoriteButtonComponent,
-    FollowButtonComponent
+    FollowButtonComponent,
+    ListErrorsComponent
   ]
 })
 export class SharedModule {}

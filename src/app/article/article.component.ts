@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute, Data, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
   Article,
   User,
   Comment,
   ArticlesService,
   UserService,
-  CommentsService
+  CommentsService,
+  Errors
 } from '../core';
 
 @Component({
@@ -37,11 +38,11 @@ import {
             </span>
 
             <span [hidden]="canModify">
-              <!-- TODO: implement follow button -->
-              <!-- <arw-follow-button
-            [profile]="article.author"
-            (toggle)="onToggleFollowing($event)" >
-          </arw-follow-button> -->
+              <arw-follow-button
+                [profile]="article.author"
+                (toggle)="onToggleFollowing($event)"
+              >
+              </arw-follow-button>
 
               <arw-favorite-button
                 [article]="article"
@@ -58,8 +59,7 @@ import {
       <div class="container page">
         <div class="row article-content">
           <div class="col-md-12">
-            <!-- TODO: implement markdown pipe -->
-            <!-- <div [innerHTML]="article.body | markdown"></div> -->
+            <div [innerHTML]="article.body | markdown"></div>
 
             <ul class="tag-list">
               <li
@@ -94,11 +94,11 @@ import {
             </span>
 
             <span [hidden]="canModify">
-              <!-- TODO: implement follow button -->
-              <!-- <arw-follow-button
-            [profile]="article.author"
-            (toggle)="onToggleFollowing($event)" >
-          </arw-follow-button> -->
+              <arw-follow-button
+                [profile]="article.author"
+                (toggle)="onToggleFollowing($event)"
+              >
+              </arw-follow-button>
 
               <arw-favorite-button
                 [article]="article"
@@ -114,8 +114,7 @@ import {
         <div class="row">
           <div class="col-xs-12 col-md-8 offset-md-2">
             <div *arwShowAuthed="true">
-              <!-- TODO: implement arw list errors -->
-              <!-- <arw-list-errors [errors]="commentFormErrors"></arw-list-errors> -->
+              <arw-list-errors [errors]="commentFormErrors"></arw-list-errors>
 
               <form class="card comment-form" (ngSubmit)="addComment()">
                 <fieldset [disabled]="isSubmitting">
@@ -144,13 +143,12 @@ import {
               to add comments on this article
             </div>
 
-            <!-- TODO: implement arw article comment -->
-            <!-- <arw-article-comment
+            <arw-article-comment
               *ngFor="let comment of comments"
               [comment]="comment"
               (deleteComment)="onDeleteComment(comment)"
             >
-            </arw-article-comment> -->
+            </arw-article-comment>
           </div>
         </div>
       </div>
@@ -241,7 +239,7 @@ export class ArticleComponent implements OnInit {
   onDeleteComment(comment: any) {
     this.commentsService
       .destroy(comment.id, this.article.slug)
-      .subscribe((success) => {
+      .subscribe((_success) => {
         this.comments = this.comments.filter((item) => item.id !== comment.id);
       });
   }

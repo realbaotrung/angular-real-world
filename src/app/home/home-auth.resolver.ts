@@ -1,4 +1,4 @@
-import { UserService } from './../core';
+import { UserService } from '../core';
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,

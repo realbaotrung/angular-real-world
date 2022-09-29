@@ -46,7 +46,7 @@ export class ArticlesService {
   get(slug: string): Observable<Article> {
     return this.apiService
       .get(this.url + '/' + slug)
-      .pipe(map((data) => data.article));
+      .pipe(map((data) => data.article as Article));
   }
 
   destroy(slug: string): Observable<any> {
@@ -58,13 +58,12 @@ export class ArticlesService {
     if (article.slug) {
       return this.apiService
         .put(this.url + article.slug, { article: article })
-        .pipe(map((data) => data.article));
-      // Otherwise, create a new article
-    } else {
-      return this.apiService
-        .post(this.url + '/', { article: article })
-        .pipe(map((data) => data.article));
+        .pipe(map((data) => data.article as Article));
     }
+    // Otherwise, create a new article
+    return this.apiService
+      .post(this.url + '/', { article: article })
+      .pipe(map((data) => data.article as Article));
   }
 
   favorite(slug: string): Observable<Article> {
