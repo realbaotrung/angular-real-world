@@ -10,7 +10,7 @@ import {
   ArticleMetaComponent
 } from './article-helpers';
 import { FavoriteButtonComponent, FollowButtonComponent } from './buttons';
-import { ListErrorsComponent } from './list-errors/list-errors.component';
+import { ListErrorsComponent } from './list-errors';
 
 @NgModule({
   imports: [CommonModule, RouterModule],

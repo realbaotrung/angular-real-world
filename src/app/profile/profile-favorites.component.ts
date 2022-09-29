@@ -5,8 +5,10 @@ import { ArticleListConfig, Profile } from '../core';
 @Component({
   selector: 'arw-profile-favorites',
   template: `
-    <!-- TODO: Implement profile favorite -->
-    <p>profile-favorites works!</p>
+    <arw-article-list
+      [limit]="10"
+      [config]="favoritesConfig"
+    ></arw-article-list>
   `,
   styles: []
 })

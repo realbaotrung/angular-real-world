@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { SharedModule, HeaderComponent, FooterComponent } from './shared';
 import { CoreModule } from './core';
 import { HomeModule } from './home/home.module';
-import { ArticleModule } from './article/article.module';
-import { ProfileModule } from './profile/profile.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -17,8 +16,7 @@ import { ProfileModule } from './profile/profile.module';
     SharedModule,
     HomeModule,
     AppRoutingModule,
-    ArticleModule,
-    ProfileModule
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
