@@ -7,6 +7,7 @@ import { SharedModule, HeaderComponent, FooterComponent } from './shared';
 import { CoreModule } from './core';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
+import { SettingsModule } from './settings/settings.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -16,7 +17,8 @@ import { AuthModule } from './auth/auth.module';
     SharedModule,
     HomeModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    SettingsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
