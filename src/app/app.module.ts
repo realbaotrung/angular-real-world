@@ -8,6 +8,7 @@ import { CoreModule } from './core';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { SettingsModule } from './setting/settings.module';
+import { EditorModule } from './editor/editor.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -18,7 +19,8 @@ import { SettingsModule } from './setting/settings.module';
     HomeModule,
     AppRoutingModule,
     AuthModule,
-    SettingsModule
+    SettingsModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

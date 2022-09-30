@@ -12,10 +12,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./profile/profile.module').then((m) => m.ProfileModule)
   },
-  // {
-  //   path: 'editor',
-  //   loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule)
-  // },
+  {
+    path: 'editor',
+    loadChildren: () =>
+      import('./editor/editor.module').then((m) => m.EditorModule)
+  },
   {
     path: 'article',
     loadChildren: () =>
