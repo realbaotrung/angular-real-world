@@ -59,9 +59,9 @@ import { Profile, UserService, User } from './../core';
   styles: []
 })
 export class ProfileComponent implements OnInit {
-  profile!: Profile;
-  currentUser!: User;
-  isUser!: boolean;
+  profile: Profile = {} as Profile;
+  currentUser: User = {} as User;
+  isUser = false;
 
   constructor(
     private route: ActivatedRoute,

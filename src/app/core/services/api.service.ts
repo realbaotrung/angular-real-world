@@ -24,7 +24,7 @@ export class ApiService {
 
   post(path: string, body?: Record<string, unknown>): Observable<any> {
     return this.http
-      .put(`${environment.api_url}${path}`, JSON.stringify(body))
+      .post(`${environment.api_url}${path}`, JSON.stringify(body))
       .pipe(catchError(this.formatError));
   }
 

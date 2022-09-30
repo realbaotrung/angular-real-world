@@ -41,7 +41,7 @@ import { UserService, Comment, User } from '../core';
   styles: []
 })
 export class ArticleCommentComponent implements OnInit, OnDestroy {
-  @Input() comment!: Comment;
+  @Input() comment: Comment = {} as Comment;
   @Output() deleteComment = new EventEmitter<boolean>();
 
   private subscription!: Subscription;

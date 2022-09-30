@@ -13,7 +13,7 @@ export class ShowAuthedDirective implements OnInit {
     this.condition = condition;
   }
 
-  condition?: boolean;
+  condition = false;
 
   constructor(
     private templateRef: TemplateRef<any>,

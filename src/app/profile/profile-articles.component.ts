@@ -10,7 +10,7 @@ import { ArticleListConfig, Profile } from '../core';
   styles: []
 })
 export class ProfileArticlesComponent implements OnInit {
-  profile!: Profile;
+  profile: Profile = {} as Profile;
   articlesConfig: ArticleListConfig = {
     type: 'all',
     filters: {}

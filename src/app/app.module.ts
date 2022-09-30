@@ -7,7 +7,7 @@ import { SharedModule, HeaderComponent, FooterComponent } from './shared';
 import { CoreModule } from './core';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
-import { SettingsModule } from './settings/settings.module';
+import { SettingsModule } from './setting/settings.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],

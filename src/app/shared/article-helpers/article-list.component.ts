@@ -47,8 +47,8 @@ export class ArticleListComponent {
       this.runQuery();
     }
   }
-  query!: ArticleListConfig;
-  results!: Article[];
+  query: ArticleListConfig = {} as ArticleListConfig;
+  results: Article[] = [] as Article[];
   loading = false;
   currentPage = 1;
   totalPages: number[] = [1];

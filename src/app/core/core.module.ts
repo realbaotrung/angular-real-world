@@ -11,6 +11,7 @@ import {
 } from './services';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpTokensInterceptor } from './interceptors/http-tokens.interceptor';
+import { AuthGuard } from './guards';
 
 @NgModule({
   imports: [CommonModule],
@@ -20,6 +21,7 @@ import { HttpTokensInterceptor } from './interceptors/http-tokens.interceptor';
       useClass: HttpTokensInterceptor,
       multi: true
     },
+    AuthGuard,
     ApiService,
     JwtService,
     UserService,

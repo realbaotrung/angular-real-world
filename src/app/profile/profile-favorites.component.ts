@@ -13,7 +13,7 @@ import { ArticleListConfig, Profile } from '../core';
   styles: []
 })
 export class ProfileFavoritesComponent implements OnInit {
-  profile!: Profile;
+  profile: Profile = {} as Profile;
   favoritesConfig: ArticleListConfig = {
     type: 'all',
     filters: {}

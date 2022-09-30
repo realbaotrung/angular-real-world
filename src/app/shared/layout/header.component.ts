@@ -84,7 +84,7 @@ import { User, UserService } from '../../core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {
-  currentUser!: User;
+  currentUser: User = {} as User;
 
   constructor(private userService: UserService) {}
 

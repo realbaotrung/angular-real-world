@@ -33,7 +33,7 @@ import { Component, Input } from '@angular/core';
   styles: []
 })
 export class ArticlePreviewComponent {
-  @Input() article!: Article;
+  @Input() article: Article = {} as Article;
 
   onToggleFavorite(favorited: boolean) {
     this.article['favorited'] = favorited;

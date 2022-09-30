@@ -1,9 +1,10 @@
-import { UserService } from '../core';
+import { UserService } from '../services/user.service';
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
-  Resolve,
-  RouterStateSnapshot
+  CanActivate,
+  RouterStateSnapshot,
+  UrlTree
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -11,15 +12,13 @@ import { take } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeAuthResolver implements Resolve<boolean> {
+export class AuthGuard implements CanActivate {
   constructor(private userService: UserService) {}
-
-  resolve(
+  canActivate(
     _route: ActivatedRouteSnapshot,
     _state: RouterStateSnapshot
-  ): Observable<boolean> {
-    const isAuth$ = this.userService.isAuthenticated.pipe(take(1));
-    return isAuth$;
+  ): Observable<boolean | UrlTree> {
+    return this.userService.isAuthenticated.pipe(take(1));
   }
 }
 

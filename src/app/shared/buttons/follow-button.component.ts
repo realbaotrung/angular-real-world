@@ -23,7 +23,7 @@ import { of } from 'rxjs';
   styles: []
 })
 export class FollowButtonComponent {
-  @Input() profile!: Profile;
+  @Input() profile: Profile = {} as Profile;
   @Output() toggle = new EventEmitter<boolean>();
   isSubmitting = false;
 

@@ -24,5 +24,5 @@ import { Component, Input } from '@angular/core';
   styles: []
 })
 export class ArticleMetaComponent {
-  @Input() article!: Article;
+  @Input() article: Article = {} as Article;
 }

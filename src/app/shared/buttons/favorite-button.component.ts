@@ -29,7 +29,7 @@ export class FavoriteButtonComponent {
     private userService: UserService
   ) {}
 
-  @Input() article!: Article;
+  @Input() article: Article = {} as Article;
   @Output() toggle = new EventEmitter<boolean>();
   isSubmitting = false;
 

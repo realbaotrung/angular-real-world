@@ -157,10 +157,10 @@ import {
   styles: []
 })
 export class ArticleComponent implements OnInit {
-  article!: Article;
-  currentUser!: User;
-  canModify!: boolean;
-  comments!: Comment[];
+  article: Article = {} as Article;
+  currentUser: User = {} as User;
+  canModify = false;
+  comments: Comment[] = [] as Comment[];
   commentControl = new FormControl();
   commentFormErrors = {};
   isSubmitting = false;

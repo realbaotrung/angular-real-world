@@ -29,6 +29,8 @@ export class JwtService {
     return CryptoJS.AES.encrypt(text, environment.storageKey).toString();
   }
   private decrypt(text: string): string {
-    return CryptoJS.AES.decrypt(text, environment.storageKey).toString();
+    return CryptoJS.AES.decrypt(text, environment.storageKey).toString(
+      CryptoJS.enc.Utf8
+    );
   }
 }
