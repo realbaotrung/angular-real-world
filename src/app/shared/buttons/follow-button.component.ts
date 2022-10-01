@@ -1,6 +1,7 @@
-import { Router } from '@angular/router';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Profile, ProfilesService, UserService } from '../../core';
+import { Router } from '@angular/router';
+import { ProfilesService, UserService } from '@/core/services';
+import { Profile } from '@/core/models';
 import { concatMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 

@@ -1,7 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Errors, User, UserService } from '../core';
+import { UserService } from '@/core/services';
+import { Errors, User } from '@/core/models';
 
 @Component({
   selector: 'arw-settings',

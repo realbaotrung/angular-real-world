@@ -1,6 +1,7 @@
-import { ArticleListConfig, TagsService, UserService } from './../core';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { TagsService } from '@/core/services';
+import { ArticleListConfig } from '@/core/models';
 
 @Component({
   selector: 'arw-home',

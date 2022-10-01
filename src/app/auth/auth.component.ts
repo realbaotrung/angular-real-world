@@ -6,7 +6,7 @@ import {
   Validators,
   FormControl
 } from '@angular/forms';
-import { Errors, UserService } from '../core';
+import { Errors, UserService } from '@/core';
 
 @Component({
   selector: 'arw-auth',

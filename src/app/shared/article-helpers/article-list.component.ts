@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Article, ArticleListConfig, ArticlesService } from '../../core';
+import { ArticlesService } from '@/core/services';
+import { Article, ArticleListConfig } from '@/core/models';
 
 @Component({
   selector: 'arw-article-list',

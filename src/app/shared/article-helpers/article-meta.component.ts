@@ -1,5 +1,5 @@
-import { Article } from './../../core';
 import { Component, Input } from '@angular/core';
+import { Article } from '@/core';
 
 @Component({
   selector: 'arw-article-meta',

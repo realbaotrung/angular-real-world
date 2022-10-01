@@ -1,4 +1,3 @@
-import { UserService } from '../core';
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
@@ -7,6 +6,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { UserService } from '@/core/services';
 
 @Injectable({
   providedIn: 'root'

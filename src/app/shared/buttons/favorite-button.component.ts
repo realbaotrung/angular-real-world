@@ -2,7 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { concatMap, tap } from 'rxjs/operators';
-import { ArticlesService, UserService, Article } from './../../core';
+import { UserService, ArticlesService } from '@/core/services';
+import { Article } from '@/core/models';
 
 @Component({
   selector: 'arw-favorite-button',

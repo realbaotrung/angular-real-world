@@ -5,22 +5,22 @@ const routes: Routes = [
   {
     path: 'settings',
     loadChildren: () =>
-      import('./setting/settings.module').then((m) => m.SettingsModule)
+      import('@/setting/settings.module').then((m) => m.SettingsModule)
   },
   {
     path: 'profile',
     loadChildren: () =>
-      import('./profile/profile.module').then((m) => m.ProfileModule)
+      import('@/profile/profile.module').then((m) => m.ProfileModule)
   },
   {
     path: 'editor',
     loadChildren: () =>
-      import('./editor/editor.module').then((m) => m.EditorModule)
+      import('@/editor/editor.module').then((m) => m.EditorModule)
   },
   {
     path: 'article',
     loadChildren: () =>
-      import('./article/article.module').then((m) => m.ArticleModule)
+      import('@/article/article.module').then((m) => m.ArticleModule)
   }
 ];
 

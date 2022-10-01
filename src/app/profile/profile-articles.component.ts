@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ArticleListConfig, Profile } from '../core';
+import { ArticleListConfig, Profile } from '@/core/models';
 
 @Component({
   selector: 'arw-profile-article',

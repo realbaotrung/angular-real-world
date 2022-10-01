@@ -1,7 +1,7 @@
-import { Article } from './../core/models/article.model';
-import { map, catchError } from 'rxjs/operators';
-import { ArticlesService } from './../core/services/articles.service';
 import { Injectable } from '@angular/core';
+import { map, catchError } from 'rxjs/operators';
+import { Article } from '@/core/models';
+import { ArticlesService } from '@/core/services';
 import {
   Router,
   Resolve,

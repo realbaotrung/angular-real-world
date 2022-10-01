@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from './../shared';
+import { SharedModule } from '@/shared';
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
 import { ProfileResolver } from './profile.resolver';

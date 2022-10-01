@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
 import { Injectable } from '@angular/core';
-import { Article, ArticleListConfig } from '../models';
+import { Article, ArticleListConfig } from '@/core/models';
 import { HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 

@@ -1,7 +1,8 @@
-import { concatMap, tap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
+import { concatMap, tap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
-import { Profile, UserService, User } from './../core';
+import { UserService } from '@/core/services';
+import { Profile, User } from '@/core/models';
 
 @Component({
   template: `

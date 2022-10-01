@@ -1,5 +1,5 @@
 import { map } from 'rxjs/operators';
-import { Comment } from './../models';
+import { Comment } from '@/core/models';
 import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
 import { Injectable } from '@angular/core';

@@ -8,7 +8,7 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Article } from '../core';
+import { Article } from '@/core';
 
 @Injectable({
   providedIn: 'root'

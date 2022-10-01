@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject, BehaviorSubject } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
-import { User } from '../models/user.model';
+import { User } from '@/core/models';
 import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
 import { JwtService } from './jwt.service';

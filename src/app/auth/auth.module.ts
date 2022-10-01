@@ -1,6 +1,6 @@
-import { NoAuthGuard } from '../core';
+import { NoAuthGuard } from '@/core';
 import { NgModule } from '@angular/core';
-import { SharedModule } from '../shared';
+import { SharedModule } from '@/shared';
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
 

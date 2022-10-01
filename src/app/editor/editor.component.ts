@@ -1,8 +1,8 @@
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { Article } from './../core/models/article.model';
-import { Component, OnInit } from '@angular/core';
-import { ArticlesService, Errors } from '../core';
+import { Article, Errors } from '@/core/models';
+import { ArticlesService } from '@/core/services';
 
 @Component({
   selector: 'arw-editor',

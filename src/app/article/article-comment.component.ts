@@ -7,7 +7,8 @@ import {
   EventEmitter
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { UserService, Comment, User } from '../core';
+import { UserService } from '@/core/services';
+import { Comment, User } from '@/core/models';
 
 @Component({
   selector: 'arw-article-comment',

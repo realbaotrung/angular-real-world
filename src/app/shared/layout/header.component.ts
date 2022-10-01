@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User, UserService } from '../../core';
+import { UserService } from '@/core/services';
+import { User } from '@/core/models';
 
 @Component({
   selector: 'arw-layout-header',

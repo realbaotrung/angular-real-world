@@ -30,8 +30,9 @@
     ],
     "paths": {
       "@/*": [
-        "./src/*"
+        "src/app/*"
       ],
+      "@environments/*": ["src/environments/*"]
     },
   },
   "angularCompilerOptions": {
