@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'arw-layout-footer',
@@ -13,8 +13,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
       </div>
     </footer>
   `,
-  styles: [],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styles: []
 })
 export class FooterComponent {
   today: number = Date.now();

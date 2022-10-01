@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User, UserService } from '../../core';
 
 @Component({
@@ -80,8 +80,7 @@ import { User, UserService } from '../../core';
       </div>
     </nav>
   `,
-  styles: [],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styles: []
 })
 export class HeaderComponent implements OnInit {
   currentUser: User = {} as User;
