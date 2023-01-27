@@ -9,7 +9,7 @@ import { User } from '@/core/models';
       <div class="container">
         <a class="navbar-brand" routerLink="/">conduit</a>
 
-        <!-- show this logged out for users -->
+        <!-- show this for logged out users -->
         <ul *arwShowAuthed="false" class="nav navbar-nav pull-xs-right">
           <li class="nav-item">
             <a class="nav-link" routerLink="/"> Home </a>
@@ -84,6 +84,7 @@ import { User } from '@/core/models';
   styles: []
 })
 export class HeaderComponent implements OnInit {
+  // currentUser: User = <User>{};
   currentUser: User = {} as User;
 
   constructor(private userService: UserService) {}

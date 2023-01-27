@@ -72,6 +72,7 @@ export class ArticleListComponent {
     // Create limit and offset filter
     if (this.limit) {
       this.query.filters.limit = this.limit;
+      // this helper for server
       this.query.filters.offset = this.limit * (this.currentPage - 1);
     }
 

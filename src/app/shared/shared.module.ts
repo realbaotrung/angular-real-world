@@ -32,6 +32,7 @@ import { ListErrorsComponent } from './list-errors';
     ShowAuthedDirective,
     ArticleMetaComponent,
     ArticleListComponent,
+    ArticlePreviewComponent,
     FavoriteButtonComponent,
     FollowButtonComponent,
     ListErrorsComponent

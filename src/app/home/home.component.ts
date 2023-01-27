@@ -47,7 +47,7 @@ import { ArticleListConfig } from '@/core/models';
             </div>
 
             <arw-article-list
-              [limit]="10"
+              [limit]="5"
               [config]="listConfig"
             ></arw-article-list>
           </div>

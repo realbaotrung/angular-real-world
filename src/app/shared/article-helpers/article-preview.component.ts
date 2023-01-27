@@ -22,7 +22,7 @@ import { Article } from '@/core/models';
         <ul class="tag-list">
           <li
             class="tag-default tag-pill tag-outline"
-            *ngFor="let tag of article.tagList"
+            *ngFor="let tag of article.tagList; trackBy: trackByTag"
           >
             {{ tag }}
           </li>
@@ -43,5 +43,9 @@ export class ArticlePreviewComponent {
     } else {
       this.article['favoritesCount'] -= 1;
     }
+  }
+
+  trackByTag(_: number, tag: string): string {
+    return tag;
   }
 }

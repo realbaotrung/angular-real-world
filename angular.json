@@ -65,7 +65,9 @@
             "scripts": [],
             "allowedCommonJsDependencies": [
               "crypto-js"
-            ]
+            ],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -140,7 +142,7 @@
           "defaultConfiguration": "development",
           "options": {
             "hmr": true,
-            "port": 4200,
+            "port": 3200,
             "open": true
           }
         },

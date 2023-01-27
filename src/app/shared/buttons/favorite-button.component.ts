@@ -24,15 +24,17 @@ import { Article } from '@/core/models';
   styles: []
 })
 export class FavoriteButtonComponent {
+  @Input() article: Article = {} as Article;
+
+  @Output() toggle = new EventEmitter<boolean>();
+
+  isSubmitting = false;
+
   constructor(
     private articlesService: ArticlesService,
     private router: Router,
     private userService: UserService
   ) {}
-
-  @Input() article: Article = {} as Article;
-  @Output() toggle = new EventEmitter<boolean>();
-  isSubmitting = false;
 
   toggleFavorite() {
     this.isSubmitting = true;
