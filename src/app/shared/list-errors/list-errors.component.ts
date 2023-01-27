@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Errors } from '@/core/models';
 
 @Component({
@@ -10,7 +10,8 @@ import { Errors } from '@/core/models';
       </li>
     </ul>
   `,
-  styles: []
+  styles: [],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListErrorsComponent {
   formattedErrors: string[] = [];

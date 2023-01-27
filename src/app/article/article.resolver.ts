@@ -1,4 +1,4 @@
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { ArticlesService } from './../core/services/articles.service';
 import { Injectable } from '@angular/core';
 import {
@@ -20,11 +20,11 @@ export class ArticleResolver implements Resolve<Article> {
   ) {}
 
   resolve(
-    route: ActivatedRouteSnapshot,
+    _route: ActivatedRouteSnapshot,
     _state: RouterStateSnapshot
   ): Observable<any> {
     return this.articlesService
-      .get(route.paramMap.get('slug') as string)
+      .get(_route.paramMap.get('slug') as string)
       .pipe(catchError((_err) => this.router.navigateByUrl('/')));
   }
 }

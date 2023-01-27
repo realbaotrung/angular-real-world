@@ -1,3 +1,4 @@
+import { HttpUrlEncodingCodec } from '@angular/common/http';
 import {
   Component,
   OnInit,
@@ -20,14 +21,11 @@ import { Comment, User } from '@/core/models';
         </p>
       </div>
       <div class="card-footer">
-        <a
-          class="comment-author"
-          [routerLink]="['/profile', comment.author.username]"
-        >
+        <a class="comment-author" [routerLink]="['/profile', encodeAuthorName]">
           <img [src]="comment.author.image" [alt]="comment.author.username" />
         </a>
         &nbsp;
-        <a [routerLink]="['/profile', comment.author.username]">
+        <a [routerLink]="['/profile', encodeAuthorName]">
           {{ comment.author.username }}
         </a>
         <span class="data-posted">
@@ -48,6 +46,7 @@ export class ArticleCommentComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
 
   canModify = false;
+  encodeAuthorName = '';
 
   constructor(private userService: UserService) {}
 
@@ -57,6 +56,11 @@ export class ArticleCommentComponent implements OnInit, OnDestroy {
       (userData: User) => {
         this.canModify = userData.username === this.comment.author.username;
       }
+    );
+
+    // Encode Author Name
+    this.encodeAuthorName = new HttpUrlEncodingCodec().encodeValue(
+      this.comment.author.username
     );
   }
 

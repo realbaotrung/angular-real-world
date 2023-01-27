@@ -7,8 +7,7 @@ import {
   Comment,
   ArticlesService,
   UserService,
-  CommentsService,
-  Errors
+  CommentsService
 } from '../core';
 
 @Component({
@@ -63,7 +62,7 @@ import {
 
             <ul class="tag-list">
               <li
-                *ngFor="let tag of article.tagList"
+                *ngFor="let tag of article.tagList; trackBy: trackByTag"
                 class="tag-default tag-pill tag-outline"
               >
                 {{ tag }}
@@ -213,7 +212,7 @@ export class ArticleComponent implements OnInit {
 
   deleteArticle() {
     this.isDeleting = true;
-    this.articlesService.destroy(this.article.slug).subscribe((success) => {
+    this.articlesService.destroy(this.article.slug).subscribe(() => {
       this.router.navigateByUrl('/');
     });
   }
@@ -242,6 +241,10 @@ export class ArticleComponent implements OnInit {
       .subscribe((_success) => {
         this.comments = this.comments.filter((item) => item.id !== comment.id);
       });
+  }
+
+  trackByTag(_: number, tag: string): string {
+    return tag;
   }
 }
 

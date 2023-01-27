@@ -59,6 +59,7 @@ import { Errors, UserService } from '@/core';
 
                 <button
                   class="btn btn-lg btn-primary pull-xs-right"
+                  type="submit"
                   [disabled]="!authForm.valid"
                 >
                   {{ title }}

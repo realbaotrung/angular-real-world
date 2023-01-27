@@ -12,6 +12,9 @@ import { EditorModule } from '@/editor/editor.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+/**
+ * https://www.tektutorialshub.com/angular/angular-folder-structure-best-practices/
+ */
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
